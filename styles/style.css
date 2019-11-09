@@ -41,6 +41,10 @@ img {
 	height: auto;
 }
 
+p {
+    line-height: 1.75;
+}
+
 /* Creating Desktop Wrapper */
 
 .wrapper {
@@ -57,7 +61,7 @@ header {
 }
 .header {
     /* Use Calc */
-    height: 70vh; 
+    height: 75vh; 
     background-image: url(../assets/image-1.jpg);
     background-size: cover;
     position: relative;
@@ -72,7 +76,7 @@ header nav {
 
 header nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -109,7 +113,6 @@ header nav a:focus {
 .headerbox p {
     padding: 15px 50px 50px 50px;
     font-size: 2.2rem;
-    line-height: 2;
 }
 
 /* Main Styling */
@@ -118,6 +121,8 @@ header nav a:focus {
     background-color: #E8F1EE;
     padding: 100px;
     margin-bottom: 100px;
+    float: right;
+    width: 95%;
 }
 
 h1 {
@@ -139,10 +144,30 @@ span {
     background-color: #D64C31;
     font-size: 5rem;
     color: #FFFFFF;
-    position: absolute;
     padding: 10px;
-    top: -10px;
-    right: -10px;
+
+}
+
+.leftarrow {
+    position: absolute;
+    top: -35px;
+    right: 35px;
+}
+
+.rightarrow {
+    position: absolute;
+    top: -35px;
+    right: -35px;
+}
+
+.welcomeh3 {
+    position: relative;
+}
+
+.responsiveleftarrow,
+.responsiverightarrow {
+    position: absolute;
+    display: none;
 }
 
 .welcome p {
@@ -152,17 +177,15 @@ span {
     text-transform: uppercase;
 }
 
-h3 {
+.welcome h3 {
     font-size: 4rem;
 }
-
-
-
 
 .informationboxes {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    clear: both;
 }
 
 .informationboxes li {
@@ -205,6 +228,8 @@ footer {
     background-color: #D64C31;
     color: #FFFFFF;
     font-size: 2.2rem;
+    position: relative;
+    margin-top: 100px;
 }
 
 .footer {
@@ -212,10 +237,28 @@ footer {
     justify-content: space-between;
 }
 
+.footernav {
+    padding-top: 50px;
+    width: 50%;
+}
 
 .footernav ul {
     display: flex;
+    margin: 20px 0px;
 }
+
+.footernav li {
+    margin-right: 25px;
+}
+.footernav a {
+    color: #FFFFFF;
+}
+
+.footernav a:hover,
+.footernav a:focus {
+    color: #4A455C;
+}
+
 
 .mailinglist {
     background-color: #4A455C;
@@ -223,7 +266,12 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    padding: 25px;
+    padding: 50px;
+    width: 35%;
+    position: absolute;
+    top: -50px;
+    right: 5%;
+    height: calc(100% + 50px);
 }
 
 .mailinglist form {
@@ -231,13 +279,205 @@ footer {
     flex-direction: column;
 }
 
+.mailinglist input {
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    text-indent: 10px;
+}
+
+.mailinglist button {
+    background-color: #FFF0E7;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 50%;
+    margin: 20px 0px;
+    transition: ease 0.5s;
+    cursor: pointer;
+}
+
+.mailinglist button:hover {
+    background-color: #D64C31;
+    letter-spacing: 2px;
+}
+
 .mailinglist label,
 .footernav h3 {
     font-size: 3rem;
     font-weight: 500;
+    margin: 10px 0px;
 }
 
 .mailinglist ul {
     display: flex;
     font-size: 3rem;
+    margin: 10px 0px;
 }
+
+.mailinglist li {
+    margin-right: 20px;
+}
+
+.mailinglist a {
+    color: #FFFFFF;
+}
+
+.mailinglist a:hover,
+.mailinglist a:focus {
+    color: #D64C31;
+}
+
+@media (max-width: 1020px) {
+
+    .headerbox {
+        bottom: 0;
+        left: 0;
+    }
+
+    .headerbox h2,
+    .courseinformation h2 {
+        font-size: 5rem;
+    }
+
+    .mailinglist {
+        width: 40%;
+    }
+
+
+@media (max-width: 930px) {
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .welcome h3 {
+        font-size: 3rem;
+    }
+    .mailinglist form,
+    .mailinglist p {
+        display: none;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+    
+    .mailinglist {
+        background-color: unset;
+        position: unset;
+        padding: 0;
+    }
+
+    .mailinglist a:hover,
+    .mailinglist a:focus {
+    color: #4A455C;
+    }
+
+@media (max-width: 890px) {
+
+    header {
+        height: 75vh;
+    }
+    header nav {
+        flex-direction: column;
+    }
+    
+    header nav img {
+        margin-bottom: 25px;
+        align-self: center;
+    }
+
+    header nav li {
+        margin-left: 0;
+    }
+
+    .header {
+        background-image: none;
+    }
+
+    .headerbox {
+        position: unset;
+        width: 100%;
+    }
+
+    .informationboxes li {
+        width: 100%;
+    }
+
+    span {
+        font-size: 3rem;
+    }
+    
+    .leftarrow {
+        top: 50%;
+        left: -35px;
+        right: unset;
+    }
+    
+    .rightarrow {
+        top: 50%;
+        right: -35px;
+    }
+
+
+@media (max-width: 525px) {
+
+    header {
+        height: 100vh;
+    }
+    
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav  li {
+        margin-bottom: 10px;
+    }
+    
+    .welcome {
+        float: unset;
+        width: 90%;
+    }
+
+    .welcome img {
+        display: none;
+    }
+
+    .leftarrow,
+    .rightarrow {
+        display: none;
+    } 
+
+    .responsiveleftarrow {
+        display: block;
+        top: 50%;
+        left: -35px;
+    }
+
+    .responsiverightarrow {
+        display: block;
+        top: 50%;
+        right: -35px;
+    }
+
+    .footernav {
+        width: 100%;
+    }
+
+    .footernav ul {
+        flex-direction: column;
+    }
+
+    .footernav li {
+        margin-bottom: 10px;
+    }
+
+    .footertext {
+        display: none;
+    }
+
+    .footernav p {
+        font-size: 1.2rem;
+    }
